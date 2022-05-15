@@ -22,7 +22,10 @@
     left:50%;
     transform: translate(-50%,-50%);
     border-radius: 15px;
+<<<<<<< HEAD
     
+=======
+>>>>>>> a9d6b35f90217f1d80c58ae5648a7d8f6bc3e822
   }
   
   .joinForm h2 {
@@ -58,6 +61,7 @@
     background: none;
   }
   
+<<<<<<< HEAD
   .pw2 {
     width: 100%;
     border:none;
@@ -67,6 +71,8 @@
     height:25px;
     background: none;
   }
+=======
+>>>>>>> a9d6b35f90217f1d80c58ae5648a7d8f6bc3e822
   .name {
     width: 100%;
     border:none;
@@ -139,7 +145,11 @@
     background-position: right;
   }
 
+<<<<<<< HEAD
   .error {
     color:red;
     font-size: 3px;
   }
+=======
+  
+>>>>>>> a9d6b35f90217f1d80c58ae5648a7d8f6bc3e822

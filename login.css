@@ -88,6 +88,7 @@
 .loginForm .loginMenu li a {
   font-size:14px;
   color:#aaa;
+<<<<<<< HEAD
 }
 
 .error{
@@ -95,4 +96,6 @@
   height: 20px;
   color:red;
   font-weight: 700;
+=======
+>>>>>>> a9d6b35f90217f1d80c58ae5648a7d8f6bc3e822
 }
