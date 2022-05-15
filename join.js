@@ -7,6 +7,7 @@ function validate() {
         var objName = document.getElementById("name");
         var objNickname = document.getElementById("nickname");
         //
+        //
         //아이디와 패스워드 값 데이터 정규화 공식
         var regul1 = /^[a-zA-Z0-9]{4,12}$/;
         //이메일 값 데이터 유효성 체크
