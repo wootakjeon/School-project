@@ -6,18 +6,17 @@ function validate() {
         var objEmail = document.getElementById("email");
         var objName = document.getElementById("name");
         var objNickname = document.getElementById("nickname");
-        //
-        //
-        //아이디와 패스워드 값 데이터 정규화 공식
+    
+
+        //패스워드 값 데이터 정규화 공식
         var regul1 = /^[a-zA-Z0-9]{4,12}$/;
-        //이메일 값 데이터 유효성 체크
-        //[]안에 있는 값만 쓰겠다
-        var test = /^([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$/
         //이메일 정규화 공식
-        var regul2 = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/;
+        var regul2 = /^([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$/
+        //var regul2 = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/;
         //이름 정규화 공식
-        var regul3 = /^[가-힝a-zA-Z]{2,}$/;
-        //var email = RegExp(/^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/);
+        var regul3 = /^[가-힣]{2,4}$/;
+        //닉네임 정규화 공식
+        var regul4 = /^[가-힝a-zA-Z]{2,}$/;
         
 
         //이메일 입력 안했을 경우
@@ -27,19 +26,16 @@ function validate() {
             return false;
         } else { document.getElementById("emailError").innerHTML=""; }
         //이메일이 잘못된 경우
-        if (!check(test,objEmail)) {
+        if (!check(regul2,objEmail)) {
             document.getElementById("emailError").innerHTML="이메일이 올바르지 않습니다.";
             return false;
         } else { document.getElementById("emailError").innerHTML=""; } 
-        /*if(!regul2.test(objEmail.value)){
-            document.getElementById("emailError").innerHTML="이메일이 올바르지 않습니다."
-            return false;
-          }*/
         //비밀번호 입력 하지 않았을 경우
         if ((objPwd1.value) == ""){
             document.getElementById("passwordError").innerHTML="비밀번호를 입력해주세요..";
             objPwd1.focus();
             return false;
+        //비밀번호 확인을 입력 하지 않았을 경우
         } else { document.getElementById("passwordError").innerHTML=""; }
         if ((objPwd2.value=="")){
             document.getElementById("passwordCheckError").innerHTML="비밀번호 확인을 입력해주세요.";
@@ -47,10 +43,10 @@ function validate() {
             return false;
         } else { document.getElementById("passwordCheckError").innerHTML="";}
         //비밀번호 유효성 검사
-        //만약 내가 비밀번호에 정규화 방식을 하나라도 지키지 않으면 if문 안으로 들어가서 alert message를 띄움
-        if (!check(regul1,objPwd1,"비밀번호는 4~12자의 대소문자와 숫자로만 입력 가능합니다.")) {
+        if (!check(regul1,objPwd1,)) {
+            document.getElementById("passwordCheckError").innerHTML="비밀번호는 4~12자의 대소문자와 숫자로만 입력 가능합니다.";
             return false;
-        }
+        } else { document.getElementById("passwordCheckError").innerHTML="";}
         
         //비밀번호와 비밀번호 확인이 일치 하지 않을 경우
         if ((objPwd1.value)!=(objPwd2.value)) {
@@ -65,8 +61,9 @@ function validate() {
             objName.focus();
             return false;
         } else { document.getElementById("nameError").innerHTML="";}
-        //이름에 특수 문자가 들어간 경우
-        if (!check(regul3,objName,"이름이 잘못 되었습니다.")) {
+        //이름에 영어나 특수 문자가 들어 간 경우
+        if (!check(regul3,objName,)) {
+            document.getElementById("nameError").innerHTML="잘못된 형식의 이름입니다.";
             return false;
         }
         //닉네임 입력 안 한 경우
@@ -75,8 +72,9 @@ function validate() {
             objNickname.focus();
             return false;
         } else { document.getElementById("nicknameError").innerHTML="";}
-        //닉네임 특수 문자가 들어간 경우
-        if (!check(regul3,objNickname,"닉네임이 잘못 되었습니다.")) {
+        //닉네임에 특수 문자가 들어간 경우
+        if (!check(regul4,objNickname)) {
+            document.getElementById("nicknameError").innerHTML="잘못된 형식의 닉네임입니다.";
             return false;
         }
     }
@@ -90,18 +88,3 @@ function validate() {
         what.value = "";
         what.focus();
     }
-
-    /*
-    //아이디 입력 하지 않았을 경우
-        if ((objID.value) == ""){
-            alert("아이디를 입력하지 않았습니다.");
-            objID.focus();
-            return false;
-        }
-        //아이디 유효성 검사
-        //내가 입력한 데이터를 검사하는 check()
-        //만약 내가 아이디에 정규화 방식을 하나라도 지키지 않으면 if문 안으로 들어가서 alert message를 띄움
-        if (!check(regul1,objID,"아이디는 4~12자의 대소문자와 숫자로만 입력 가능합니다.")) {
-            return false;//반환 할 곳 없이 if문 탈출
-        }
-    */
