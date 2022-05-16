@@ -20,7 +20,7 @@
 		<!-- header -->
 		<div> {% include "header.html" %} </div>
 	
-			<form action="/index" method="get" class="joinForm" onsubmit="return validate()">
+			<form action="/" method="post" class="joinForm"  onsubmit="return validate()">
                 {% csrf_token %}                                                                                
 				<h2>회원가입</h2>
 				<div class="textForm">
