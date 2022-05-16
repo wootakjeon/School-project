@@ -8,7 +8,7 @@
     <title>Document</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     
 </head>
 <body>
@@ -17,24 +17,24 @@
         <div class="d-flex flex-wrap justify-content-between">
           
           
-          <a class ="logo mt-2" href="/">Logo</a>
+          <a class ="logo mt-2" href="index.html">Logo</a>
           
           <ul class="nav me-auto px-lg-3 m-2">
             <div class="dropdown">
-              <a class="btn btn-secondary dropdown-toggle px-sm-2 bg-success p-2 text-dark bg-opacity-25" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="btn btn-secondary dropdown-toggle px-sm-2 bg-success p-2 text-dark bg-opacity-25" href="/index" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                 강의
               </a>
             
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <li><a class="dropdown-item" href="#">강사 정보</a></li>
-                <li><a class="dropdown-item" href="#">강의 후기</a></li>
-                <li><a class="dropdown-item" href="#">강의 문의</a></li>
+                <li><a class="dropdown-item" href="/index">강사 정보</a></li>
+                <li><a class="dropdown-item" href="/index">강의 후기</a></li>
+                <li><a class="dropdown-item" href="/index">강의 문의</a></li>
               </ul>
             </div>
     
-            <li class="nav-item px-2"><a href="#" class="nav-link link-dark px-2">멘토링</a></li>
-            <li class="nav-item px-2"><a href="#" class="nav-link link-dark px-2">커뮤니티</a></li>
-            <li class="nav-item px-2"><a href="#" class="nav-link link-dark px-2">게시판</a></li>
+            <li class="nav-item px-2"><a href="/index" class="nav-link link-dark px-2">멘토링</a></li>
+            <li class="nav-item px-2"><a href="/index" class="nav-link link-dark px-2">커뮤니티</a></li>
+            <li class="nav-item px-2"><a href="/index" class="nav-link link-dark px-2">게시판</a></li>
           </ul>
             
               <div class="row float-xxl-end ml-auto">
@@ -45,7 +45,7 @@
                     </form>
                   </div>
                   <div class="col">             
-                      <a href="/login"><button" class="btn btn-outline-primary me-2 px-md-3 mt-2">로그인</button></a>
+                      <a href="/login"><button class="btn btn-outline-primary me-2 px-md-3 mt-2">로그인</button></a>
                       <a href="/join"><button type="button" class="btn btn-primary px-md-3 mt-2">회원가입</button></a>
                 </div>  
               </div>
